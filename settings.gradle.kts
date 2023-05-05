@@ -33,4 +33,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Mastard"
 include(":androidApp")
-include(":shared")
+include(":sharedUi")
