@@ -1,16 +1,27 @@
 PODS:
+  - KMPNativeCoroutinesAsync (1.0.0-ALPHA-7):
+    - KMPNativeCoroutinesCore (= 1.0.0-ALPHA-7)
+  - KMPNativeCoroutinesCore (1.0.0-ALPHA-7)
   - sharedUi (1.0.0)
 
 DEPENDENCIES:
+  - KMPNativeCoroutinesAsync (= 1.0.0-ALPHA-7)
   - sharedUi (from `../sharedUi`)
+
+SPEC REPOS:
+  trunk:
+    - KMPNativeCoroutinesAsync
+    - KMPNativeCoroutinesCore
 
 EXTERNAL SOURCES:
   sharedUi:
     :path: "../sharedUi"
 
 SPEC CHECKSUMS:
+  KMPNativeCoroutinesAsync: ec6d9c73fccd5b3ce61a08335038e5d4465ad7d4
+  KMPNativeCoroutinesCore: 394490858758d4dce66b23d5b40d3cb0a295d585
   sharedUi: 1d6581714367280d6b0bc83a978911e4f527fcda
 
-PODFILE CHECKSUM: d8799141d45b83f3abe2e3373c11a73118e15aad
+PODFILE CHECKSUM: 2089849681baf88da98930fc6c6a42c4348c9e69
 
 COCOAPODS: 1.12.1

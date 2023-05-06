@@ -3,6 +3,8 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
+    id("com.google.devtools.ksp")
+    id("com.rickclephas.kmp.nativecoroutines")
 }
 
 kotlin {
@@ -33,6 +35,8 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                val kmmvmVersion = findProperty("kmmvm.version") as String
+                implementation("com.rickclephas.kmm:kmm-viewmodel-core:$kmmvmVersion")
             }
         }
         val androidMain by getting {
@@ -50,6 +54,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+        }
+        all {
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
         }
     }
 }
