@@ -28,6 +28,7 @@ kotlin {
     }
 
     sourceSets {
+        val koinVersion = findProperty("koin.version") as String
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
@@ -37,6 +38,7 @@ kotlin {
                 implementation(compose.components.resources)
                 val kmmvmVersion = findProperty("kmmvm.version") as String
                 implementation("com.rickclephas.kmm:kmm-viewmodel-core:$kmmvmVersion")
+                implementation("io.insert-koin:koin-core:$koinVersion")
             }
         }
         val androidMain by getting {
@@ -44,6 +46,7 @@ kotlin {
                 api("androidx.activity:activity-compose:1.6.1")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.9.0")
+                implementation("io.insert-koin:koin-android:$koinVersion")
             }
         }
         val iosX64Main by getting

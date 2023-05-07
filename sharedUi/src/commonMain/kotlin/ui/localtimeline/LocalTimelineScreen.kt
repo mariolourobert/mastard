@@ -15,9 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun LocalTimelineScreen() {
-    val viewModel = LocalTimelineScreenViewModel()
-
+fun LocalTimelineScreen(viewModel: LocalTimelineScreenViewModel) {
     val posts = viewModel.posts.collectAsState().value
 
     LazyColumn {
